@@ -13,12 +13,14 @@ public class TemperatureConverter {
         frame.setLayout(new GridLayout(5, 2, 10, 10));
 
         // Create components
-        JLabel inputLabel = new JLabel("Enter Temperature:");
+        JLabel inputLabel = new JLabel("     Enter Temperature:");
         JTextField inputField = new JTextField();
-        JLabel scaleLabel = new JLabel("Select Scale:");
+        JLabel scaleLabel = new JLabel("     Select Scale:");
         String[] scales = {"Celsius", "Fahrenheit", "Kelvin"};
         JComboBox<String> scaleComboBox = new JComboBox<>(scales);
         JButton convertButton = new JButton("Convert");
+        convertButton.setBackground(Color.GREEN);
+        convertButton.setForeground(Color.GRAY);
         JTextArea resultArea = new JTextArea();
         resultArea.setEditable(false);
 
@@ -29,7 +31,7 @@ public class TemperatureConverter {
         frame.add(scaleComboBox);
         frame.add(new JLabel()); // Empty placeholder
         frame.add(convertButton);
-        frame.add(new JLabel("Conversion Results:"));
+        frame.add(new JLabel("     Conversion Results:"));
         frame.add(resultArea);
 
         // Event handling for conversion
